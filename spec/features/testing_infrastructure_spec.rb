@@ -34,18 +34,15 @@ feature 'Attack Player 2' do
   end
 end
 
-describe 'Switch Turns' do
-  context "Tests the current turn" do
+feature 'Switch Turns' do
     scenario "Player one is told it's their turn first" do
       sign_in_and_play
-      expect(page).to have_content "Richie's Turn"
+      expect(page).to have_content "Charlie's Turn"
     end
-  end
-
-
+  
     scenario 'After the first attack' do
       switch_turns
-      expect(page).to have_content "Charlie's Turn"
+      expect(page).to have_content "Richie's Turn"
     end
 end
 

@@ -1,7 +1,7 @@
 require 'capybara'
 require 'sinatra'
-require '/Users/student/Projects/admin/battle-project/lib/player.rb'
-require '/Users/student/Projects/admin/battle-project/lib/game.rb'
+require './lib/player.rb'
+require './lib/game.rb'
 
 class Battle < Sinatra::Base
 
@@ -16,13 +16,16 @@ class Battle < Sinatra::Base
     end
 
     post '/names' do
-      $game = Game.new(params[:player_1], params[:player_2])
+      $player_1 = Player.new(params[:player_1])
+      $player_2 = Player.new(params[:player_2])
+      $game = Game.new($player_1, $player_2)
 
       redirect '/play'
     end
 
     get '/play' do
       @game = $game
+      @game.switch_turns
       erb(:play)
     end
 

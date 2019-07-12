@@ -3,6 +3,7 @@
     <h1><center><%= @game.player_1.name %> vs. <%= @game.player_2.name %></center></h1>
       <h3><%=@game.player_2.name%> HP : <%=@game.player_2.hp%> </h3>
       <h3><%=@game.player_1.name%> HP : <%=@game.player_1.hp%> </h3>
+      <h3><%=@game.current_turn.name%>'s Turn</h3>
       <form action="/attack" method="get">
         <div class="button">
           <button type="submit">Karate Chopskies!</button>
