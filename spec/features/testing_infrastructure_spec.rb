@@ -34,17 +34,34 @@ feature 'Attack Player 2' do
   end
 end
 
-feature 'Switch turns' do
-  scenario "The game will switch with each turn" do
-    switch_turns
-    expect(page).to have_content "Richie HP"
+describe 'Switch Turns' do
+  context "Tests the current turn" do
+    scenario "Player one is told it's their turn first" do
+      sign_in_and_play
+      expect(page).to have_content "Richie's Turn"
+    end
   end
+
+
+    scenario 'After the first attack' do
+      switch_turns
+      expect(page).to have_content "Charlie's Turn"
+    end
 end
 
-feature 'Attack player one' do
-  scenario "Player two attacks player one." do
-    switch_turns
-    click_button "Flying Kick!"
-    expect(page).to have_content "Charlie attacked Richie"
-  end
-end
+
+#
+# feature 'Switch turns' do
+#   scenario "The game will switch with each turn" do
+#     switch_turns
+#     expect(page).to have_content "Richie HP"
+#   end
+# end
+#
+# feature 'Attack player one' do
+#   scenario "Player two attacks player one." do
+#     switch_turns
+#     click_button "Flying Kick!"
+#     expect(page).to have_content "Charlie attacked Richie"
+#   end
+# end
