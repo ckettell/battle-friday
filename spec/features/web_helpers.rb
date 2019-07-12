@@ -9,3 +9,8 @@ def karate_chop
   sign_in_and_play
   click_button 'Karate Chopskies'
 end
+
+def switch_turns
+  karate_chop
+  click_button 'Back to Battle'
+end

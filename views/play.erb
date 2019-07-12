@@ -1,10 +1,16 @@
 <html>
   <body style="background-color:rgb(4, 215, 252);">
-    <h1><center><%= @player_1 %> vs. <%= @player_2 %></center></h1>
-      <h3><%=@player_2%> HP</h3>
+    <h1><center><%= @game.player_1.name %> vs. <%= @game.player_2.name %></center></h1>
+      <h3><%=@game.player_2.name%> HP : <%=@game.player_2.hp%> </h3>
+      <h3><%=@game.player_1.name%> HP : <%=@game.player_1.hp%> </h3>
       <form action="/attack" method="get">
         <div class="button">
           <button type="submit">Karate Chopskies!</button>
+        </div>
+      </form>
+      <form action="/attack-1" method="get">
+        <div class="button">
+          <button type="submit">Flying Kick!</button>
         </div>
       </form>
   </body>
