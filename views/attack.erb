@@ -1,6 +1,6 @@
 <html>
   <body style="background-color:rgb(221, 8, 92)">
-    <h1><%=@game.player_1.name%> attacked <%=@game.player_2.name%> </h1>
+    <h1><%=@game.current_turn.name%> was attacked </h1>
     <br>
   </body>
   <form action="/play" method="get">

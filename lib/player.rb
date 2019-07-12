@@ -9,7 +9,12 @@ class Player
   end
 
   def receive_damage
-    @hp -= 10
+    @hp -= rand(30)
+    message
+  end
+
+  def message
+    "#{@name} died" if @hp <= 0
   end
 
 end

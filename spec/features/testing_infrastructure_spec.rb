@@ -30,19 +30,19 @@ end
 feature 'Attack Player 2' do
   scenario 'it allows me to attack Player 2 and get conformation' do
     karate_chop
-    expect(page).to have_content "Richie attacked Charlie"
+    expect(page).to have_content "Charlie was attacked"
   end
 end
 
 feature 'Switch Turns' do
     scenario "Player one is told it's their turn first" do
       sign_in_and_play
-      expect(page).to have_content "Charlie's Turn"
+      expect(page).to have_content "Richie's Turn"
     end
-  
+
     scenario 'After the first attack' do
       switch_turns
-      expect(page).to have_content "Richie's Turn"
+      expect(page).to have_content "Charlie's Turn"
     end
 end
 

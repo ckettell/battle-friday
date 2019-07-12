@@ -9,6 +9,14 @@ attr_reader :player_1, :player_2, :current_turn
     @current_turn = player_1
   end
 
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
+  end
+
+  def self.instance
+    @game
+  end
+
   def player_1
     @players.first
   end
@@ -30,6 +38,5 @@ attr_reader :player_1, :player_2, :current_turn
   def opponent_of(the_player)
     @players.select { |player| player != the_player }.first
   end
-
 
 end

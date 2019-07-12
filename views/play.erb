@@ -4,15 +4,16 @@
       <h3><%=@game.player_2.name%> HP : <%=@game.player_2.hp%> </h3>
       <h3><%=@game.player_1.name%> HP : <%=@game.player_1.hp%> </h3>
       <h3><%=@game.current_turn.name%>'s Turn</h3>
+      <h3><%=@game.current_turn.message%></h3>
       <form action="/attack" method="get">
         <div class="button">
           <button type="submit">Karate Chopskies!</button>
         </div>
       </form>
-      <form action="/attack-1" method="get">
+      <!-- <form action="/attack-1" method="get">
         <div class="button">
           <button type="submit">Flying Kick!</button>
         </div>
-      </form>
+      </form> -->
   </body>
  </html>
